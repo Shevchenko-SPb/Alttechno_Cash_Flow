@@ -24,36 +24,66 @@
     </div>
 </header>
 <main>
-    <div class="container">
-        <div class="flex flex-col bg-amber-200">
-            <div class="flex flex-row">
-                <div>Project</div>
-                <div>Description</div>
-                <div>Supplier</div>
-                <div>Дата план</div>
-                <div>Дата факт</div>
-                <div class="flex flex-col">
-                    <div>Total for 2022</div>
-                    <div>plan</div>
-                </div>
-                <div></div>
-            </div>
-            <div class="flex flex-row">
-                <div>Название</div>
-                <div class="flex flex-col">
-                    <div>Название поступления</div>
-                    <div class="flex flex-row">
-                        <div>Название поступления</div>
-                        <div>0</div>
-                        <div>0</div>
-                        <div>0</div>
-                        <div>0</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-row bg-amber-400">2</div>
-    </div>
+    
+
+    <table class="table-auto border-collapse border border-slate-400 ms-10 mt-10">
+        <thead>
+        <tr>
+            <th class="border border-slate-300" rowspan="2">Project</th>
+            <th class="border border-slate-300" rowspan="2" colspan="2">Description</th>
+            <th class="border border-slate-300" rowspan="2">Supplier</th>
+            <th class="border border-slate-300" rowspan="2">Дата План</th>
+            <th class="border border-slate-300" rowspan="2">Дата Факт</th>
+            <th class="border border-slate-300">Тотал 2023</th>
+            <th class="border border-slate-300" colspan="3">Месяц</th>
+
+        </tr>
+        <tr>
+            <th class="border border-slate-300">plan</th>
+            <th class="border border-slate-300">план</th>
+            <th class="border border-slate-300">факт</th>
+            <th class="border border-slate-300">разница</th>
+        </tr>
+        <tr>
+            <th class="border border-slate-300" colspan="4">Общий итог</th>
+            <th class="border border-slate-300"></th>
+            <th class="border border-slate-300"></th>
+            <th class="border border-slate-300"></th>
+            <th class="border border-slate-300"></th>
+            <th class="border border-slate-300"></th>
+            <th class="border border-slate-300"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="border border-slate-300" rowspan="3">Название проекта</td>
+<!--            <td class="border border-slate-300 bg-green-600/60" rowspan="2"></td>-->
+            <td class="border border-slate-300 bg-green-600/60" colspan="2">Поступления дс</td>
+            <td class="border border-slate-300"></td>
+            <td class="border border-slate-300"></td>
+            <td class="border border-slate-300"></td>
+            <td class="border border-slate-300"></td>
+            <td class="border border-slate-300"></td>
+            <td class="border border-slate-300"></td>
+            <td class="border border-slate-300"></td>
+        </tr>
+        <tr>
+            <td class="border border-slate-300 bg-green-600/20"></td>
+            <td class="border border-slate-300">Поступления дс 100 000р</td>
+            <td class="border border-slate-300"></td>
+            <td class="border border-slate-300"></td>
+            <td class="border border-slate-300"></td>
+            <td class="border border-slate-300"></td>
+            <td class="border border-slate-300"></td>
+            <td class="border border-slate-300"></td>
+        </tr>
+        <tr>
+            <td class="border border-slate-300">Shining Star</td>
+            <td class="border border-slate-300">Earth, Wind, and Fire</td>
+            <td class="border border-slate-300">1975</td>
+        </tr>
+        </tbody>
+    </table>
 </main>
 </body>
 <script src="assets/js/main.js"></script>
