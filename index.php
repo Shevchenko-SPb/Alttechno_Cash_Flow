@@ -1,17 +1,19 @@
-<?php
-$connection = \Bitrix\Main\Application::getConnection();
-$sql = $connection->Query("SELECT biep.IBLOCK_ELEMENT_ID FROM b_iblock_element_property biep WHERE `IBLOCK_ELEMENT_ID` IN (SELECT `ID` FROM `b_iblock_element` WHERE `IBLOCK_ID` = 48) 
-AND `IBLOCK_PROPERTY_ID` = 407
-#SELECT `VALUE` FROM `b_iblock_element_property` WHERE `IBLOCK_ELEMENT_ID` IN (SELECT `ID` FROM `b_iblock_element` WHERE `IBLOCK_ID` = 48) 
-#AND `IBLOCK_PROPERTY_ID` = 407
-AND `IBLOCK_ELEMENT_ID` IN (SELECT `IBLOCK_ELEMENT_ID` FROM `b_iblock_element_property` WHERE `IBLOCK_ELEMENT_ID` IN (SELECT `ID` FROM `b_iblock_element` WHERE `IBLOCK_ID` = 48) 
-AND `IBLOCK_PROPERTY_ID` = 405 AND `VALUE` BETWEEN '2023-06-01' AND '2023-08-24');");
-foreach ($sql  as $row)
-{
-    echo $row['IBLOCK_ELEMENT_ID'];
 
-}
-?>
+<!--$connection = \Bitrix\Main\Application::getConnection();-->
+<!--$sql = $connection->Query("SELECT biep.IBLOCK_ELEMENT_ID FROM b_iblock_element_property biep WHERE `IBLOCK_ELEMENT_ID` IN (SELECT `ID` FROM `b_iblock_element` WHERE `IBLOCK_ID` = 48) -->
+<!--AND `IBLOCK_PROPERTY_ID` = 407-->
+<!--#SELECT `VALUE` FROM `b_iblock_element_property` WHERE `IBLOCK_ELEMENT_ID` IN (SELECT `ID` FROM `b_iblock_element` WHERE `IBLOCK_ID` = 48) -->
+<!--#AND `IBLOCK_PROPERTY_ID` = 407-->
+<!--AND `IBLOCK_ELEMENT_ID` IN (SELECT `IBLOCK_ELEMENT_ID` FROM `b_iblock_element_property` WHERE `IBLOCK_ELEMENT_ID` IN (SELECT `ID` FROM `b_iblock_element` WHERE `IBLOCK_ID` = 48) -->
+<!--AND `IBLOCK_PROPERTY_ID` = 405 AND `VALUE` BETWEEN '2023-06-01' AND '2023-08-24');");-->
+<!---->
+<!---->
+<!--foreach ($sql  as $row)-->
+<!--{-->
+<!--    echo $row['IBLOCK_ELEMENT_ID'];-->
+<!---->
+<!--}-->
+<!--?>-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +21,7 @@ foreach ($sql  as $row)
     <meta charset="UTF-8">
     <title>Cash Flow</title>
     <script src="assets/js/cdn.tailwindcss.com_3.3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <style>
     </style>
 </head>
@@ -26,10 +29,10 @@ foreach ($sql  as $row)
 <header class="ms-10 mt-10">
 <div class="font-bold text-3xl px-2 py-3">Cash Flow</div>
     <div>
-        <button id="filters" class="border border-slate-600 rounded-md px-2 active:bg-black/20">Filters</button>
-    <div id="FiltersMenu" class="hidden">Фильтр по дате Начало: <input id="start" type="date" />
-        Конец: <input id="end" type="date" />
-        <button id="go" class="border border-slate-600 rounded-md px-2 active:bg-black/20">Применить</button>
+        <button id="btnShowFilters" class="border border-slate-600 rounded-md px-2 active:bg-black/20">Filters</button>
+    <div id="filtersMenu" class="hidden" >Фильтр по дате Начало: <input id="startDate" type="date" />
+        Конец: <input id="endDate" type="date" />
+        <button id="btnConfirmFilter" class="border border-slate-600 rounded-md px-2 active:bg-black/20">Применить</button>
     </div>
 </header>
 <main>
@@ -101,5 +104,5 @@ foreach ($sql  as $row)
     </table>
 </main>
 </body>
-<script src="assets/js/main.js"></script>
+<script type="module" src="assets/js/main.js"></script>
 </html>
