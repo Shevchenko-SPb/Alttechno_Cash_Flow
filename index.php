@@ -56,4 +56,4 @@ class Router {
 $routes = ROOT.'/routes.php';
 $router = new Router($routes);
 $router->run();
-//header('location: ./cashflow');
+header('location: ./cashflow');

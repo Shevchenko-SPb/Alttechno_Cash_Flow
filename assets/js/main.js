@@ -1,4 +1,7 @@
 import Dom from "./dom.js";
+const headers = {
+    'Content-Type': 'application/json'
+}
 
 
 const getDOM = (id) => document.getElementById(id);
@@ -20,9 +23,9 @@ domBtnShowFilters.onclick = () => {
 };
 
 domBtnConfirmFilters.onclick = () => {
-    let dateStart = domFilterDateStart.value;
-    let dateEnd = domFilterDateEnd.value;
-    getDealsByDate(dateStart, dateEnd)
+    let dateFrom = domFilterDateStart.value;
+    let dateTo = domFilterDateEnd.value;
+    getDealsByDate(dateFrom, dateTo)
 }
 
 
@@ -30,17 +33,33 @@ domBtnConfirmFilters.onclick = () => {
 
 
 //---------- Запросы к БД ---------
-function getDealsByDate(dateStart, dateEnd) {
-    let $datePeriod = [dateStart, dateEnd]
+function getDealsByDate(dateFrom, dateTo) {
+    let $datePeriod = [dateFrom, dateTo]
     console.log($datePeriod)
 
-    axios.post('/getDealsByDate',
-        JSON.parse(JSON.stringify($datePeriod))
-    )
+    axios.get('/getlist', {
+        params: {
+            date: $datePeriod
+        },
+        headers: headers
+    })
         .then(function (response) {
-            console.log(response);
+            console.log(response.request.responseURL)
+            console.log( response.data.result)
         })
         .catch(function (error) {
-            console.log(error);
-        });
+        })
+        .finally(function () {
+        })
+
+    // axios.get('/getlist',
+    //     JSON.parse(JSON.stringify($datePeriod))
+    // )
+    //     .then(function (response) {
+    //         console.log(response);
+    //     })
+    //     .catch(function (error) {
+    //         console.log(error);
+    //     });
 }
+
