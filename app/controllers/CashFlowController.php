@@ -1,4 +1,7 @@
 <?php
+// ToDo Подключить autoloader
+require_once('app/view/CashFlowView.php');
+
 
 class CashFlowController {
     public function actionIndex () {

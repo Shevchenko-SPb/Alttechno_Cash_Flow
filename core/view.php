@@ -1,11 +1,8 @@
 <?php
-
-namespace core;
 class View
 {
-    function render($path, $data)
+    function render($path)
     {
-        extract($data);
         $fullpath = __DIR__ . "/../app/templates/" . $path;
         if (file_exists($fullpath)) {
             ob_start();
