@@ -1,7 +1,7 @@
 <?php
 // ToDo Подключить autoloader
 require_once('app/view/CashFlowView.php');
-require_once (__DIR__ . '/../../model/CashFlowModel.php');
+//require_once (__DIR__ . '/../../model/CashFlowModel.php');
 
 
 class CashFlowController {
@@ -12,7 +12,7 @@ class CashFlowController {
     }
 
     public function actionGetListByDate ($date) {
-        $model = new DealFromCashInModel();
+        // $model = new DealFromCashInModel();
 
     }
 }

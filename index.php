@@ -21,7 +21,7 @@ class Router {
         $uri = $this->getURI();
 
         if (!$uri) {
-            $uri = "login";
+            $uri = "cashflow";
         }
         foreach($this->routes as $pattern => $route){
 
@@ -56,4 +56,3 @@ class Router {
 $routes = ROOT.'/routes.php';
 $router = new Router($routes);
 $router->run();
-header('location: ./cashflow');
