@@ -1,10 +1,13 @@
 <?php
 
-class View {
-    function render($path, $data) {
+namespace core;
+class View
+{
+    function render($path, $data)
+    {
         extract($data);
-        $fullpath = __DIR__."/../app/templates/" . $path;
-        if (file_exists($fullpath) ) {
+        $fullpath = __DIR__ . "/../app/templates/" . $path;
+        if (file_exists($fullpath)) {
             ob_start();
             include $fullpath;
 
@@ -16,5 +19,5 @@ class View {
 
         return $page;
         // echo $page; 
-    } 
+    }
 }
