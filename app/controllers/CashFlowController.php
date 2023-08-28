@@ -1,7 +1,6 @@
 <?php
 // ToDo Подключить autoloader
 require_once('app/view/CashFlowView.php');
-var_dump(__DIR__ . '/../../model/CashFlowModel.php');
 require_once (__DIR__ . '/../../model/CashFlowModel.php');
 
 
