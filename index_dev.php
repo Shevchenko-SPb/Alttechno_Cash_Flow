@@ -1,12 +1,6 @@
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
-require($_SERVER["DOCUMENT_ROOT"] . "/cust_app/cash_flow/model/data_array.php");
-$arData = new dataArray();
-$a = $arData->getDataArray();
-$domain = $_SERVER['SERVER_NAME'];
-//echo '<pre>';
-//print_r($a);
-//echo '</pre>';
+require($_SERVER["DOCUMENT_ROOT"] . "/cust_app/cash_flow/model/data_array_dev.php");
 ?>
 
 
@@ -17,7 +11,7 @@ $domain = $_SERVER['SERVER_NAME'];
     <title>Cash Flow</title>
     <script src="assets/js/cdn.tailwindcss.com_3.3.js"></script>
     <script src="assets/js/jQuery_v3.7.1.js"></script>
-    <script src="assets/js/axios_v1.1.2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <style>
     </style>
 </head>
@@ -35,7 +29,7 @@ $domain = $_SERVER['SERVER_NAME'];
     <table id="table" class="table-auto border-collapse border border-slate-600 ms-10 mt-10 shadow-md">
         <tr class="bg-slate-300/70">
             <th class="border border-slate-600 px-2" rowspan="2">Project</th>
-            <th class="border border-slate-600 px-2" rowspan="2" colspan="2">Description</th>
+            <th class="border border-slate-600 px-2" rowspan="2">Description</th>
             <th class="border border-slate-600 px-2" rowspan="2">Supplier</th>
             <th class="border border-slate-600 px-2" rowspan="2">Дата План</th>
             <th class="border border-slate-600 px-2" rowspan="2">Дата Факт</th>
@@ -79,13 +73,8 @@ $domain = $_SERVER['SERVER_NAME'];
         </thead>
         <tbody>
         <tr>
-            <td class="border border-slate-600" rowspan="2">
-            <tr>1</tr>
-            <tr>2</tr>
-            <tr>3</tr>
-        </td>
-
-
+            <td class="border border-slate-600" rowspan="2">Название проекта</td>
+<!--            <td class="border border-slate-600 bg-green-600/60" rowspan="2"></td>-->
             <td class="border border-slate-600 bg-green-600/60" colspan="2">Поступления дс</td>
             <td class="border border-slate-600 bg-green-600/60"></td>
             <td class="border border-slate-600 bg-green-600/60"></td>
@@ -122,9 +111,5 @@ $domain = $_SERVER['SERVER_NAME'];
     </table>
 </main>
 </body>
-<script>
-    let dataPhp = '<?=$a ?>'
-    let serverRoot = '<?=$domain ?>'
-</script>
 <script type="module" src="assets/js/main.js"></script>
 </html>
