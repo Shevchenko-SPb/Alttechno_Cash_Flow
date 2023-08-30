@@ -10,9 +10,7 @@ class CashFlowController {
             $result = $v->render('index.html');
             echo $result;
     }
-
     public function actionGetListByDate ($date) {
         // $model = new DealFromCashInModel();
-
     }
 }
