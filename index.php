@@ -4,6 +4,8 @@ require($_SERVER["DOCUMENT_ROOT"] . "/cust_app/cash_flow/model/data_array.php");
 $arData = new dataArray();
 $a = $arData->getDataArray();
 $domain = $_SERVER['SERVER_NAME'];
+
+
 //echo '<pre>';
 //print_r($a);
 //echo '</pre>';
@@ -32,7 +34,7 @@ $domain = $_SERVER['SERVER_NAME'];
     </div>
 </header>
 <main>
-    <table id="table" class="table-auto border-collapse border border-slate-600 ms-10 mt-10 shadow-md">
+    <table id="table" class="table-auto border-collapse border border-slate-600 ms-10 mt-10 mb-10 shadow-md">
         <tr class="bg-slate-300/70">
             <th class="border border-slate-600 px-2" rowspan="2">Project</th>
             <th class="border border-slate-600 px-2" rowspan="2" colspan="2">Description</th>
@@ -48,77 +50,6 @@ $domain = $_SERVER['SERVER_NAME'];
             <th class="border border-slate-600 px-2">факт</th>
             <th class="border border-slate-600 px-2">разница</th>
         </tr>
-    </table>
-    <table class="table-auto border-collapse border border-slate-600 ms-10 mt-10 shadow-md">
-        <thead>
-        <tr class="bg-slate-300/70">
-            <th class="border border-slate-600" rowspan="2">Project</th>
-            <th class="border border-slate-600" rowspan="2" colspan="2">Description</th>
-            <th class="border border-slate-600" rowspan="2">Supplier</th>
-            <th class="border border-slate-600" rowspan="2">Дата План</th>
-            <th class="border border-slate-600" rowspan="2">Дата Факт</th>
-            <th class="border border-slate-600">Тотал 2023</th>
-            <th class="border border-slate-600" colspan="3">Месяц</th>
-
-        </tr>
-        <tr class="bg-slate-300/70">
-            <th class="border border-slate-600">plan</th>
-            <th class="border border-slate-600">план</th>
-            <th class="border border-slate-600">факт</th>
-            <th class="border border-slate-600">разница</th>
-        </tr>
-        <tr>
-            <th class="border border-slate-600" colspan="4">Общий итог</th>
-            <th class="border border-slate-600"></th>
-            <th class="border border-slate-600"></th>
-            <th class="border border-slate-600"></th>
-            <th class="border border-slate-600"></th>
-            <th class="border border-slate-600"></th>
-            <th class="border border-slate-600"></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td class="border border-slate-600" rowspan="2">
-            <tr>1</tr>
-            <tr>2</tr>
-            <tr>3</tr>
-        </td>
-
-
-            <td class="border border-slate-600 bg-green-600/60" colspan="2">Поступления дс</td>
-            <td class="border border-slate-600 bg-green-600/60"></td>
-            <td class="border border-slate-600 bg-green-600/60"></td>
-            <td class="border border-slate-600 bg-green-600/60"></td>
-            <td class="border border-slate-600 bg-green-600/60"></td>
-            <td class="border border-slate-600 bg-green-600/60"></td>
-            <td class="border border-slate-600 bg-green-600/60"></td>
-            <td class="border border-slate-600 bg-green-600/60"></td>
-        </tr>
-        <tr>
-            <td class="bg-green-600/60 w-4"></td>
-            <td class="border border-slate-600 bg-green-600/20">Поступления дс 100 000р</td>
-            <td class="border border-slate-600"></td>
-            <td class="border border-slate-600"></td>
-            <td class="border border-slate-600"></td>
-            <td class="border border-slate-600"></td>
-            <td class="border border-slate-600"></td>
-            <td class="border border-slate-600"></td>
-            <td class="border border-slate-600"></td>
-        </tr>
-        <tr>
-            <td class="border border-slate-600"></td>
-            <td class="border border-slate-600"></td>
-            <td class="border border-slate-600">TotalKCP01</td>
-            <td class="border border-slate-600"></td>
-            <td class="border border-slate-600"></td>
-            <td class="border border-slate-600"></td>
-            <td class="border border-slate-600"></td>
-            <td class="border border-slate-600"></td>
-            <td class="border border-slate-600"></td>
-            <td class="border border-slate-600"></td>
-        </tr>
-        </tbody>
     </table>
 </main>
 </body>
